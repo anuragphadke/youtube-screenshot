@@ -1,0 +1,36 @@
+{
+  "name": "youtube-screenshot",
+  "version": "1.0.0",
+  "description": "A Node.js library to capture high-quality screenshots from YouTube videos.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/anuragphadke/youtube-screenshot.git"
+  },
+  "keywords": [
+    "youtube",
+    "screenshot",
+    "nodejs",
+    "video",
+    "capture",
+    "high-quality"
+  ],
+  "author": "anurag phadke <anurag.phadke@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "fluent-ffmpeg": "^2.1.2",
+    "ytdl-core": "^4.9.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.23.5",
+    "@babel/preset-env": "^7.23.5",
+    "jest": "^27.5.1"
+  },
+  "bugs": {
+    "url": "https://github.com/anuragphadke/youtube-screenshot/issues"
+  },
+  "homepage": "https://github.com/anuragphadke/youtube-screenshot#readme"
+}
