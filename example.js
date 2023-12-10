@@ -1,5 +1,4 @@
-// const takeScreenshot = require('youtube-screenshot');
-const takeScreenshot = require('./index');
+const takeScreenshot = require('youtube-screenshot');
 
 async function captureYouTubeVideoScreenshot(videoUrl, timestamp, outputDir, filename) {
     try {
