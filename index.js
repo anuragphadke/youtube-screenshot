@@ -25,11 +25,21 @@ function secondsToTimeFormat(seconds) {
     return pad(hours, 2) + ':' + pad(minutes, 2) + ':' + pad(secs, 2);
 }
 
-async function takeScreenshot(videoUrl, time, outputPath, filename) {
+async function getVideoDuration(url) {
+    const info = await ytdl.getInfo(url);
+    const duration = info.videoDetails.lengthSeconds;
+    return duration;
+}
+
+async function takeScreenshot(videoUrl, timestampInSeconds, outputPath, filename) {
     try {
-        time = secondsToTimeFormat(time)
+        const durationInSeconds = await getVideoDuration(videoUrl);
+        if (timestampInSeconds > durationInSeconds) {
+            throw new Error('Requested timestamp is beyond the video duration.');
+        }
+        const timeFormat = secondsToTimeFormat(timestampInSeconds)
         const videoStream = ytdl(videoUrl, { quality: 'highest' });
-        await screenshot(videoStream, time, outputPath, filename);
+        await screenshot(videoStream, timeFormat, outputPath, filename);
     } catch (error) {
         throw error;
     }

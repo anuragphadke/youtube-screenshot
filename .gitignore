@@ -1,3 +1,5 @@
 c.js
 node_modules/*
 screenshots/*
+.DS_Store
+.vscode
